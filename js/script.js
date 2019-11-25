@@ -17,16 +17,27 @@
 // --------------------------------------------------------------
 
     // $(document).ready(function () {
-    //     $('.box').click(function () {
+    //     $('.box').click(function () {  // or $(".box").click(function () {
     //         var classNames=$(this).attr('class').split(' ')
-    //         $('.'+classNames[1]).css('backgroung-color', 'red')
+    //         $('.'+classNames[1]).css('background-color', 'red')
     //     });
     // });
 
 
     $(document).ready(function () {
-        $(".box").click(function () {
-            var classNames=$(this).attr("class").split(" ");
-            $("." + classNames[1]).css("backgroung-color", "red");
+        $('.box').click(function () {
+            var classNames=$(this).attr('class').split(' ')
+            var boxClass=classNames[0];
+            var className=classNames[1];
+            if ($(this).css('background-color')=='red'){
+            $('.'+className).css('background-color', '#000');
+            }else{
+                $('.'+boxClass).css('background-color', '#000');
+                $('.'+className).css('background-color', 'red')
+            }
         });
     });
+
+
+
+    
